@@ -1,0 +1,49 @@
+body{
+    background-color: #FDFBEE;
+}
+.reg-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+.card {
+    background-color: #57B4BA; 
+    padding: 20px; 
+    border-radius: 69px ; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.alert {
+    color: #721c24; 
+    background-color: #f8d7da; 
+    border-color: #f5c6cb; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
+
+.form-control {
+    width: 90%; 
+    padding: 10px; 
+    background-color: #57B4BA;
+    border: none;
+    border-bottom: 2px solid #000000; 
+    border-radius: 5px; 
+}
+
+.btn {
+    background-color: #FE4F2D; 
+    color: white; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 69px; 
+    cursor: pointer; 
+}
+
+.btn:hover {
+    background-color: #0056b3; 
+}
