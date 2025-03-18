@@ -9,6 +9,7 @@ import PrivateRoute from './PrivateRoute';
 import Layout from './Layout';  
 import Courses from './Courses';
 import Network from './Network';
+import CareerPath from './CareerPath';
 function App() {
   return (
     <>
@@ -19,7 +20,7 @@ function App() {
               <Route path="/CourseConnect/" element={<Layout><DashBoard /></Layout>} />
             </Route>
 
-
+            <Route path="/CourseConnect/careerpath" element={<CareerPath />} />
             <Route path="/CourseConnect/routine" element={<Layout><Routine /></Layout>} />
             <Route path="/CourseConnect/courses" element={<Layout><Courses /></Layout>} />
             <Route path="/CourseConnect/network" element={<Layout><Network /></Layout>} />

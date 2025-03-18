@@ -18,18 +18,19 @@ function SignUp() {
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError("Passwords do not match");
         }
-
+    
         try {
             setError("");
             setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
-            navigate("/CourseConnect/");
+            const userCredential = await signup(emailRef.current.value, passwordRef.current.value);
+            navigate("/CourseConnect/careerpath"); // ✅ Redirect to Career Path instead of Dashboard
         } catch (error) {
             setError("Failed to sign up"); 
         } finally {
             setLoading(false);
         }
     }
+    
 
     return (
         <>

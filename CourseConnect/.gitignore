@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Ignore Firebase configuration
+firebaseConfig.js
+
+# Ignore environment variables
+.env
+
+# Ignore key.json
+key.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
