@@ -1,0 +1,107 @@
+.career-path-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    min-height: 60vh;
+    width: 100%;
+    max-width: 100%;
+}
+
+.header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.career-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+.career-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4f46e5;
+    margin-bottom: 1.5rem;
+}
+
+.career-section {
+    margin-bottom: 1.5rem;
+}
+
+.career-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.career-section button {
+    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.career-section button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+}
+
+.career-section button:active {
+    transform: translateY(0);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.styled-button {
+    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.styled-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+}
+
+.styled-button:active {
+    transform: translateY(0);
+}

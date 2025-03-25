@@ -1,127 +1,68 @@
-.db-container{
+/* Basic styles for DashBoard component */
+/* Dashboard Container */
+.db-container {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-evenly;
-    min-height: 100vh; 
-}
-.header{
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    flex-direction: column; 
-    align-items: center; 
-    background-color: #57B4BA;
-    margin: 10px;
-    border-radius: 15px;
-    transition: 0.3s;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9fafb; /* Light background */
 }
 
-.header:hover{
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    flex-direction: column; 
-    align-items: center; 
-    background-color: #57B4BA;
-    border-radius: 30px;
-    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
+/* Header */
+.header {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 .header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4f46e5; /* Indigo */
     margin-bottom: 10px;
 }
 
-hr {
-    width: 100%;
-    border: 1px solid #000000; 
-    margin-top: 15px; 
-}
-
-.reg-btns{
+/* Navigation Buttons */
+.reg-btns {
     display: flex;
-    padding: 15px;
-}
-
-.reg-btns .btn{
-    background-color: #FE4F2D; 
-    color: white; 
-    padding: 10px; 
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: 69px;
-    margin-right: 69px;
-    border: none; 
-    border-radius: 69px; 
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer; 
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.reg-btns .btn:hover{
-    background-color: #FE4F2D; 
-    color: white; 
-    padding: 10px; 
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: 69px;
-    margin-right: 69px;
-    border: none; 
-    border-radius: 69px; 
-    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
-    cursor: pointer; 
-    text-decoration: none;
-    display: inline-block;
-}
-
-.reg-btns .btn:active{
-    background-color: #FE4F2D; 
-    color: white; 
-    padding: 10px; 
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: 69px;
-    margin-right: 69px;
-    border: none; 
-    border-radius: 69px; 
-    box-shadow: 0px 0px  rgba(0, 0, 0, 0.2);
-    cursor: pointer; 
-}
-
-.profile{
-    position: absolute;
-    top: 10px; 
-    right: 20px;
-    background-color: #FE4F2D;
-    padding: 10px; 
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 15px;
+}
+
+.reg-btns .btn {
+    background-color: #4f46e5; /* Indigo */
     color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-.main-content {
-    padding-top: 120px;
-
+.reg-btns .btn:hover {
+    background-color: #4338ca; /* Slightly darker Indigo */
 }
 
-.footer {
-    background-color: #333;
-    color: white;
+/* Main Content */
+.content {
     text-align: center;
-    padding: 10px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    margin-top: 30px;
+    max-width: 600px;
+}
+
+.content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111827; /* Dark text */
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #6b7280; /* Gray text */
 }

@@ -1,70 +1,58 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "./context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import './Registration.css'; // Importing Registration CSS
-
-
+import "./auth.css"; // Import the new CSS file
 
 function SignIn() {
-
-
-
     const { signin } = useAuth();
     const emailRef = useRef();
     const passwordRef = useRef();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    
 
     async function handleSubmit(e) {
         e.preventDefault();
-
         try {
             setError("");
             setLoading(true);
             await signin(emailRef.current.value, passwordRef.current.value);
             navigate("/CourseConnect/");
-        } catch (error) {
+        } catch {
             setError("Failed to sign in");
-
         } finally {
             setLoading(false);
         }
     }
 
     return (
-        <>
-        <div className="reg-container">
-            <div className="card">
+        <div className="auth-container">
+            <div className="auth-card">
+                <h1 className="auth-header">Welcome back!</h1>
+                
+                {error && <div className="auth-error">{error}</div>}
 
-
-            <h2 className="hd">Sign In</h2>
-
-                {error && <div className="alert alert-danger">{error}</div>}
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group" id="email">
-                        <label>Email address</label>
-                        <input type="email" className="form-control" placeholder="Enter email" ref={emailRef} required />
+                    <div className="auth-input-group">
+                        <input id="email" type="email" ref={emailRef} className="auth-input" placeholder=" " required />
+                        <label htmlFor="email" className="auth-label">Email address</label>
                     </div>
-                    <div className="form-group" id="password">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" ref={passwordRef} required />
+
+                    <div className="auth-input-group">
+                        <input id="password" type="password" ref={passwordRef} className="auth-input" placeholder=" " required />
+                        <label htmlFor="password" className="auth-label">Password</label>
                     </div>
-                    <button disabled={loading} className="btn btn-primary w-100 mt-3" type="submit">
-                        Sign In
+
+                    <button disabled={loading} type="submit" className="auth-button">
+                        {loading ? "Signing In..." : "Sign In"}
                     </button>
                 </form>
-                <div style={{padding: "10px"}}>
-                    Need an account? <Link to={"/CourseConnect/signup"}>Sign up</Link>
+
+                <div className="auth-footer">
+                    Need an account? <Link to="/CourseConnect/signup" className="auth-link">Sign up</Link>
                 </div>
             </div>
-
-            
-            
-            
-</div>
-        </>
+        </div>
     );
 }
 

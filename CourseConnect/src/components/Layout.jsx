@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
             </Link>
             <Link to={"/CourseConnect/chatbot"}>
                     <button className="btn">
-                        AI Assistent
+                        AI chatbot
                     </button>
                 </Link>
         </div>

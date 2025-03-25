@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../components/context/AuthContext";
 
-import { db } from "../firebase"; // ✅ Corrected path
+import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
-import "./DashBoard.css"; // ✅ Ensure correct path
+import "./DashBoard.css";
 
 export default function DashBoard() {
     const { currentUser } = useAuth();
@@ -20,10 +20,9 @@ export default function DashBoard() {
                 if (userDoc.exists() && userDoc.data().careerPath) {
                     setCareerSelected(true);
                 } else {
-                    // ✅ If no career is selected, set a flag in Firestore
                     await updateDoc(userDocRef, { needsCareerSelection: true });
                     setCareerSelected(false);
-                    navigate('/CourseConnect/careerpath'); // ✅ Redirect only new users
+                    navigate('/CourseConnect/careerpath');
                 }
             };
             checkCareerSelection();
@@ -49,7 +48,7 @@ export default function DashBoard() {
                         <button className="btn">Network</button>
                     </Link>
                     <Link to={"/CourseConnect/chatbot"}>
-                        <button className="btn">AI Assistant</button>
+                        <button className="btn">AI chatbot</button>
                     </Link>
                 </div>
             </div>

@@ -3,7 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 100px; 
+    padding: 1rem;
+    background-color: #f8f9fa;
+    min-height: 60vh;
+    width: 100%;
+    max-width: 100%;
 }
 
 .routine-title {
@@ -11,6 +15,147 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+}
+
+.routine-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.days-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.day-button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.day-button.active {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.tasks-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.add-task-button {
+    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-task-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+}
+
+.add-task-button:active {
+    transform: translateY(0);
+}
+
+.add-task-button::before {
+    content: '+';
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4f46e5;
+}
+
+.task-info h3 {
+    margin: 0;
+    color: #1f2937;
+}
+
+.task-info p {
+    margin: 0.5rem 0 0;
+    color: #6b7280;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task-actions button:first-child {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.task-actions button:last-child {
+    background-color: #ef4444;
+    color: white;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .routine-table {
@@ -51,4 +196,21 @@
 
 .edit-btn:hover {
     background-color: #D93C1A;
+}
+
+@media (max-width: 768px) {
+    .routine-content {
+        grid-template-columns: 1fr;
+    }
+
+    .days-sidebar {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .day-button {
+        white-space: nowrap;
+    }
 }
