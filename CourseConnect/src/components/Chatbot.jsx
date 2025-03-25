@@ -30,20 +30,34 @@ export default function Chatbot() {
       setIsLoading(true);
       setError(null);
       
-      const response = await fetch('YOUR_AI_ENDPOINT', {
+      const response = await fetch(import.meta.env.VITE_AI_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({
+          contents: [{
+            parts: [{ text: input }]
+          }]
+        }),
       });
 
       if (!response.ok) throw new Error('Failed to get AI response');
       
       const data = await response.json();
-      setMessages(prev => [...prev, { 
-        text: data.response, 
-        isUser: false,
-        timestamp: Date.now()
-      }]);
+      console.log(data); // Log the entire response for debugging
+      if (data.candidates && data.candidates.length > 0) {
+        setMessages(prev => [...prev, { 
+          text: data.candidates[0].content.parts[0].text,
+          isUser: false,
+          timestamp: Date.now()
+        }]);
+      } else {
+        setMessages(prev => [...prev, { 
+          text: "No response from AI.",
+          isUser: false,
+          timestamp: Date.now()
+        }]);
+      }
+
     } catch (error) {
       setError(error.message);
       console.error('Error:', error);
@@ -119,6 +133,7 @@ export default function Chatbot() {
           disabled={isLoading}
         />
         <motion.button
+          className="btn"  // Added class to match dashboard buttons
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleSend}
